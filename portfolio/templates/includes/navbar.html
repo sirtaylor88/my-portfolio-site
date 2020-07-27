@@ -1,0 +1,25 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-md fixed-top custom-navbar">
+  <a href="/" class="custom-navbar-brand custom-navbar-link">
+    <img src="{% static 'images/favicon/android-chrome-192x192.png' %}" height="50" alt="">
+  </a>
+
+  <button type="button" data-toggle="collapse" data-target="#navbarContent" class="navbar-toggler">
+    <i class="fas fa-bars"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarContent">
+    <div class="navbar-nav">
+      <a href="/portfolio/" class="custom-navbar-item custom-navbar-link">Portfolio</a>
+      <div class="custom-navbar-item dropdown right-dropdown">
+        <a href="#" data-toggle="dropdown" class="custom-navbar-link dropdown-toggle">Publications</a>
+
+        <div class="dropdown-menu dropdown-menu-right">
+          <a href="/publications/?tab=thesis" class="custom-navbar-item custom-navbar-link">Thesis</a>
+          <a href="/publications/?tab=others" class="custom-navbar-item custom-navbar-link">Others</a>
+        </div>
+      </div>
+      <a href="/bio/" class="custom-navbar-item custom-navbar-link">Bio</a>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-3">
+  <h1>About me</h1>
+  <div class="row">
+    <div class="col-md-4 col-6" style="min-width:300px">
+      <img src="{% static 'images/tai.jpeg' %}" alt="Avatar image" style="min-width:300px;max-width:100%;height:auto">
+    </div>
+    <div class="col-md-8 col-6">
+      <p>I am Nhat Tai NGUYEN, aka Nathan NGUYEN.</p>
+      <p>I am a web developer with solid scientific background.</p>
+
+      <img src="{% static 'images/logos/logo_restons_en_vigne.png' %}" width="200" alt="Restons En Vigne logo">
+      <img src="{% static 'images/logos/artoche_logo.png' %}" width="200" alt="Artoche logo">
+      <img src="{% static 'images/logos/mpq_logo.png' %}" width="200" alt="MPQ logo">
+      <img src="{% static 'images/logos/cea_liten_logo.jpg' %}" width="200" alt="CEA Liten logo">
+      <img src="{% static 'images/logos/inl_lyon_logo.png' %}" width="200" alt="INL Lyon logo">
+      <img src="{% static 'images/logos/sgs_logo.svg' %}" width="200" alt="SGS logo">
+    </div>
+  </div>
+</div>
+
+{% endblock %}

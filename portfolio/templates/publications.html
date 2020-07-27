@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-3">
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link {% if tab == 'thesis' %} active {% endif %}" id="pills-thesis-tab" data-toggle="pill" href="#pills-thesis" role="tab" aria-controls="pills-thesis" aria-selected="true">My Thesis</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link {% if tab == 'others' %} active {% endif %}" id="pills-others-tab" data-toggle="pill" href="#pills-others" role="tab" aria-controls="pills-others" aria-selected="false">Other Publications</a>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade {% if tab == 'thesis' %} show active {% endif %}" id="pills-thesis" role="tabpanel" aria-labelledby="pills-thesis-tab">
+      {% include 'includes/thesis.html' %}
+    </div>
+
+    <div class="tab-pane fade {% if tab == 'others' %} show active {% endif %}" id="pills-others" role="tabpanel" aria-labelledby="pills-others-tab">
+      <table class="table table-responsive-md table-hover table-sm">
+        <thead class="thead-dark">
+          <th>#</th>
+          <th>Cover image</th>
+          <th><a href="?tab=others&order_by=title&direction={{direction}}" id="title">
+            Title <i class="fa fa-sort" aria-hidden="true"></i>
+          </a></th>
+          <th>First author ?</th>
+          <th><a href="?tab=others&order_by=publisher&direction={{direction}}" id="publisher">
+            Publisher <i class="fa fa-sort" aria-hidden="true"></i>
+          </a></th>
+          <th><a href="?tab=others&order_by=publication_date&direction={{direction}}" id="publicationDate">
+            Publication Date <i class="fa fa-sort" aria-hidden="true"></i>
+          </a></th>
+        </thead>
+        <tbody>
+          {% for publication in publications %}
+            <tr>
+              <td>{{ forloop.counter }}</td>
+              <td><a href="{{ publication.link }}" target="blank"><img src="{{ publication.cover_image.url }}" width="100"></a></td>
+              <td style="width:40%">{{ publication }}</td>
+              <th>{% if publication.authors.0|lower == "nhat tai nguyen" %} Yes {% else %} No {% endif %}</th>
+              <td>{{ publication.publisher }}</td>
+              <td>{{ publication.publication_date }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock content %}
+
+{% block extra_script %}
+  <script>
+    document.querySelector("#title").addEventListener('click', function() {
+      let el = document.querySelector("#title")
+      if (el.getAttribute("href").includes("direction=asc")) {
+        el.setAttribute("href", "?tab=others&order_by=title&direction=desc")
+      } else {
+        el.setAttribute("href", "?tab=others&order_by=title&direction=asc")
+      }
+    })
+
+    document.querySelector("#publisher").addEventListener('click', function() {
+      let el = document.querySelector("#publisher")
+      if (el.getAttribute("href").includes("direction=asc")) {
+        el.setAttribute("href", "?tab=others&order_by=publisher&direction=desc")
+      } else {
+        el.setAttribute("href", "?tab=others&order_by=publisher&direction=asc")
+      }
+    })
+
+    document.querySelector("#publicationDate").addEventListener('click', function() {
+      let el = document.querySelector("#publicationDate")
+      if (el.getAttribute("href").includes("direction=asc")) {
+        el.setAttribute("href", "?tab=others&order_by=publication_date&direction=desc")
+      } else {
+        el.setAttribute("href", "?tab=others&order_by=publication_date&direction=asc")
+      }
+    })
+  </script>
+{% endblock extra_script %}
