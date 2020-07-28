@@ -12,8 +12,8 @@ from portfolio.settings.components.common import INSTALLED_APPS, MIDDLEWARE
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    # TODO: check production hosts
     config('DOMAIN_NAME'),
+    "tai-portfolio-production.herokuapp.com",
 
     # We need this value for `healthcheck` to work:
     'localhost',

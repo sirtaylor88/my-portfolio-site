@@ -11,4 +11,9 @@ from portfolio.settings.components.common import INSTALLED_APPS, MIDDLEWARE
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "tai-portfolio-staging.herokuapp.com",
+    "localhost",
+    "127.0.0.1",
+    "[::1]"
+]
