@@ -51,7 +51,7 @@ def run_seed(self, mode):
         publisher        = "Physical Chemistry Chemical Physics",
         publication_date = datetime.datetime(2018, 4, 5),
         link             = "https://doi.org/10.1039/C8CP00737C",
-        cover_image      = ImageFile(open("portfolio/static/images/pubs/pccp_issue_18.jpg", "rb"))
+        cover_image      = ImageFile(open("portfolio/static/images/pubs/pccp_issue_18.jpg", "rb"), name = "pccp_issue_18.jpg")
     )
     publication_1.save()
 
@@ -62,7 +62,7 @@ def run_seed(self, mode):
       publisher        = "Crystal Growth & Design",
       publication_date = datetime.datetime(2017, 10, 17),
       link             = "https://doi.org/10.1021/acs.cgd.7b00708",
-      cover_image      = ImageFile(open("portfolio/static/images/pubs/crystal_growth_design_vol_18_issue_1.jpg", "rb"))
+      cover_image      = ImageFile(open("portfolio/static/images/pubs/crystal_growth_design_vol_18_issue_1.jpg", "rb"), name = "crystal_growth_design_vol_18_issue_1.jpg")
     )
     publication_2.save()
 
@@ -73,7 +73,7 @@ def run_seed(self, mode):
       publisher        = "ACS Nano",
       publication_date = datetime.datetime(2016, 3, 18),
       link             = "https://doi.org/10.1021/acsnano.5b07377",
-      cover_image      = ImageFile(open("portfolio/static/images/pubs/acs_nano_vol_10_issue_4.jpg", "rb"))
+      cover_image      = ImageFile(open("portfolio/static/images/pubs/acs_nano_vol_10_issue_4.jpg", "rb"), name = "acs_nano_vol_10_issue_4.jpg")
     )
     publication_3.save()
 
@@ -84,7 +84,7 @@ def run_seed(self, mode):
       publisher        = "Physical Chemistry Chemical Physics",
       publication_date = datetime.datetime(2014, 7, 3),
       link             = "https://doi.org/10.1039/C4NR01427H",
-      cover_image      = ImageFile(open("portfolio/static/images/pubs/pccp_issue_42.jpg", "rb"))
+      cover_image      = ImageFile(open("portfolio/static/images/pubs/pccp_issue_42.jpg", "rb"), name = "pccp_issue_42.jpg")
     )
     publication_4.save()
 
@@ -95,7 +95,7 @@ def run_seed(self, mode):
       publisher        = "Nanoscale",
       publication_date = datetime.datetime(2015, 3, 6),
       link             = "https://doi.org/10.1039/C5CP00249D",
-      cover_image      = ImageFile(open("portfolio/static/images/pubs/nanoscale_issue_17.jpg", "rb"))
+      cover_image      = ImageFile(open("portfolio/static/images/pubs/nanoscale_issue_17.jpg", "rb"), name = "nanoscale_issue_17.jpg")
     )
     publication_5.save()
 
@@ -106,7 +106,7 @@ def run_seed(self, mode):
       publisher        = "Nanoscale",
       publication_date = datetime.datetime(2014, 6, 26),
       link             = "https://doi.org/10.1039/C4NR02836H",
-      cover_image      = ImageFile(open("portfolio/static/images/pubs/nanoscale_issue_17.jpg", "rb"))
+      cover_image      = ImageFile(open("portfolio/static/images/pubs/nanoscale_issue_17.jpg", "rb"), name = "nanoscale_issue_17.jpg")
     )
     publication_6.save()
 
@@ -117,7 +117,7 @@ def run_seed(self, mode):
       publisher        = "Energy Procedia",
       publication_date = datetime.datetime(2011, 12, 23),
       link             = "https://doi.org/10.1016/j.egypro.2011.10.144",
-      cover_image      = ImageFile(open("portfolio/static/images/pubs/energy_procedia_vol_10.gif", "rb"))
+      cover_image      = ImageFile(open("portfolio/static/images/pubs/energy_procedia_vol_10.gif", "rb"), name = "energy_procedia_vol_10.gif")
     )
     publication_7.save()
 
