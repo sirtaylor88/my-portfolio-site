@@ -37,6 +37,10 @@ setup(
         "gunicorn",
         "django-heroku",
         "whitenoise", # serve static files in production
+
+        # AWS S3
+        "boto3",
+        "django-storages",
     ],
 
 )

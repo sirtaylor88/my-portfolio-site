@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     "bootstrap4",
     "sass_processor",
     "fontawesome_5",
+    "storages",
 ]
 
 MIDDLEWARE = [
@@ -114,10 +115,20 @@ SASS_PROCESSOR_ROOT = str(BASE_DIR.joinpath("static"))
 
 # Set Media root
 MEDIA_URL = '/media/'
-MEDIA_ROOT = str(BASE_DIR.joinpath("media"))
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
 
 #  Add configuration for static files storage using whitenoise
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# AWS storage S3
+AWS_ACCESS_KEY_ID       = config("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY   = config("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = config("AWS_STORAGE_BUCKET_NAME")
+AWS_S3_REGION_NAME      = config("AWS_S3_REGION_NAME")
+AWS_S3_FILE_OVERWRITE   = False
+AWS_DEFAULT_ACL         = None
+AWS_QUERYSTRING_AUTH    = False # fix signature problem
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
