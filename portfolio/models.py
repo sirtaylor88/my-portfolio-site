@@ -11,7 +11,8 @@ class Publication(models.Model):
     publication_date = models.DateField()
     link             = models.CharField(max_length = 120)
     cover_image      = models.ImageField(blank = True,
-                                         upload_to = "images")
+                                         null = True,
+                                         upload_to = "images/")
 
     class Meta:
         ordering = ["-publication_date"]
