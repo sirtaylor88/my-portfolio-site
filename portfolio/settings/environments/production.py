@@ -14,6 +14,8 @@ DEBUG = False
 ALLOWED_HOSTS = [
     config('DOMAIN_NAME'),
     "tai-portfolio-production.herokuapp.com",
+    "nhattainguyen.com",
+    "www.nhattainguyen.com",
 
     # We need this value for `healthcheck` to work:
     'localhost',
