@@ -36,7 +36,7 @@ s3transfer==0.3.3         # via boto3
 six==1.15.0               # via django-compressor, libsass, python-dateutil
 soupsieve==2.0.1          # via beautifulsoup4
 sqlparse==0.3.1           # via django
-urllib3==1.25.10          # via botocore
+urllib3==1.26.5          # via botocore
 whitenoise==5.1.0         # via django-heroku, portfolio (setup.py)
 zipp==3.1.0               # via importlib-metadata
 
